@@ -8,10 +8,9 @@ const User = ({ users }) => {
     return (
         <>
             <Switch>
-                <Route path={path + "/profile"} component={UserEdit} />
-                <Route path={path} render={() => <UserPage users={users} />} />
+                <Route exact path={path + "/profile"} component={UserEdit} />
+                <Route exact path={path} render={() => <UserPage users={users} />} />
                 <Redirect to={path} />
-                {/* //? После редиректа адресная строка не очищается ? */}
             </Switch>
         </>
     );
